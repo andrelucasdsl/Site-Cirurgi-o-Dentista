@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Activity, ArrowUpRight, Layers, ShieldCheck, Sparkles, Syringe } from "lucide-react";
+import { Activity, ArrowUpRight, Gem, Layers, ShieldCheck, Sparkles, Syringe } from "lucide-react";
 import { treatmentWhatsappMessage, whatsappLink, type Treatment } from "@/lib/site";
 
 const TREATMENT_ICONS: Record<string, LucideIcon> = {
@@ -8,6 +8,7 @@ const TREATMENT_ICONS: Record<string, LucideIcon> = {
   restauracoes: Layers,
   endodontia: Activity,
   "cirurgia-oral": Syringe,
+  "lentes-resina": Gem,
 };
 
 export function TreatmentCard({ treatment }: { treatment: Treatment }) {

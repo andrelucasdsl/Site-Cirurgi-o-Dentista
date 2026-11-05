@@ -1,9 +1,27 @@
+import Image from "next/image";
 import { ArrowRight, MapPin } from "lucide-react";
+import fs from "node:fs";
+import path from "node:path";
 import { PhotoPlaceholder } from "./PhotoPlaceholder";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { WHATSAPP_DEFAULT_MESSAGE } from "@/lib/site";
 
+const PHOTO_DIR = path.join(process.cwd(), "public", "fotos");
+const PHOTO_EXTENSIONS = [".webp", ".jpg", ".jpeg", ".png"];
+
+/** Procura a foto da capa em public/fotos/hero.<ext>. Retorna null se não houver. */
+function findHeroPhoto(): string | null {
+  for (const ext of PHOTO_EXTENSIONS) {
+    if (fs.existsSync(path.join(PHOTO_DIR, `hero${ext}`))) {
+      return `/fotos/hero${ext}`;
+    }
+  }
+  return null;
+}
+
 export function HeroSection() {
+  const heroPhoto = findHeroPhoto();
+
   return (
     <section id="topo" className="relative overflow-hidden bg-white">
       {/* Grafismos abstratos: curvas em laranja e creme */}
@@ -47,10 +65,22 @@ export function HeroSection() {
         </div>
 
         <div className="animate-fade-up animation-delay-2 mx-auto w-full max-w-md lg:max-w-none">
-          <PhotoPlaceholder
-            label="Fotografia real dos profissionais"
-            className="aspect-[4/5]"
-          />
+          {heroPhoto ? (
+            <Image
+              src={heroPhoto}
+              alt="André Lucas Scalzer e Laizza Scalzer no consultório odontológico"
+              width={1086}
+              height={1448}
+              priority
+              sizes="(max-width: 1024px) 90vw, 45vw"
+              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-lg"
+            />
+          ) : (
+            <PhotoPlaceholder
+              label="Fotografia real dos profissionais"
+              className="aspect-[4/5]"
+            />
+          )}
         </div>
       </div>
     </section>

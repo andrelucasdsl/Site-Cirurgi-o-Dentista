@@ -85,8 +85,11 @@ export default async function PoliticaDePrivacidadePage() {
               4. Mapa e serviços de terceiros
             </h2>
             <p className="mt-2">
-              O link de localização direciona ao Google Maps, que pode coletar
-              dados de navegação conforme a política de privacidade do Google.
+              O site incorpora um mapa do Google Maps com a localização do
+              consultório. Ao carregar, o mapa pode transmitir dados de
+              navegação (como endereço IP) ao Google, conforme a política de
+              privacidade do Google. O link de localização também direciona ao
+              Google Maps, com a mesma finalidade.
             </p>
           </section>
 

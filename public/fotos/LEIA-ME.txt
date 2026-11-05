@@ -1,0 +1,24 @@
+FOTOS DOS PROFISSIONAIS E DA CAPA
+==================================
+
+Coloque os arquivos de imagem nesta pasta (public/fotos) com EXATAMENTE
+estes nomes:
+
+  hero.jpg      -> foto da parte inicial (topo do site)
+  andre.jpg     (ou andre.webp / andre.png / andre.jpeg)
+  laizza.jpg    (ou laizza.webp / laizza.png / laizza.jpeg)
+
+O site detecta o arquivo automaticamente e substitui o espaço reservado
+pela foto real. Se a foto não existir, o placeholder continua aparecendo.
+
+DICAS:
+- Formato ideal: JPG ou WebP (menor tamanho, carrega mais rápido)
+- Tamanho mínimo: 1000 px na maior dimensão
+- Peso ideal: até 500 KB por foto
+- Enquadramento: rosto/torso visíveis (retrato ou paisagem)
+- Nomes em MINÚSCULAS e sem acento (importante: no servidor Linux a
+  diferença entre "André" e "andre" importa)
+
+Após colocar os arquivos:
+- Modo desenvolvimento: recarregue a página (Ctrl+F5) e a foto aparece
+- Publicação: me avise para gerar o build e enviar ao GitHub

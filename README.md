@@ -71,7 +71,7 @@ src/
     HeroSection.tsx
     ProfessionalsSection.tsx
     TreatmentsGrid.tsx / TreatmentCard.tsx
-    DifferentialsSection.tsx
+    ResultsSection.tsx                   # "Nossos resultados" (antes e depois)
     AppointmentSteps.tsx
     FAQAccordion.tsx
     ContactSection.tsx
@@ -92,12 +92,18 @@ até serem resolvidos.
 1. **Nome da marca** — confirmar se será "Odonto Vitta", os nomes dos
    profissionais ou outra marca. Atual: nomes dos profissionais como
    identificação (`BrandMark.tsx`).
-2. **CRO e identificação profissional** — inserir em
-   `ProfessionalsSection.tsx` e no rodapé (`Footer.tsx`), além do JSON-LD.
+2. **CRO e identificação profissional** — ✅ informados pelos profissionais:
+   André Lucas Scalzer **CRO-BA 30069** e Laizza Scalzer **CRO-BA 30100**
+   (exibidos em `ProfessionalsSection.tsx` e `Footer.tsx`). Antes de
+   publicar, confirmar o formato/UF (ex.: CRO-BA) junto ao CRO competente.
 3. **Horários de atendimento** — o site diz apenas "consulte pelo WhatsApp";
    substituir em `ContactSection.tsx`, `FAQS` e JSON-LD quando informados.
 4. **Fotografias reais** — substituir `PhotoPlaceholder` por `next/image`
    com as fotos aprovadas (hero e seção sobre). Subir em WebP/AVIF.
+5. **Fotos de antes e depois** — a seção "Nossos resultados" lê as fotos de
+   `public/resultados/` (`caso1-antes.jpg`, `caso1-depois.jpg`, ...).
+   Confirmar **autorização expressa dos pacientes** antes de publicar
+   (exigência da PRD e das normas profissionais).
 5. **Mapa** — validar o ponto exato e incorporar o iframe do Google Maps em
    `ContactSection.tsx` (hoje há apenas link de busca).
 6. **Domínio** — definir e registrar. Depois, atualizar `SITE_URL` em

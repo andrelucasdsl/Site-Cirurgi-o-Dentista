@@ -1,6 +1,12 @@
 import { ArrowUpRight, Clock, MapPin, MessageCircle } from "lucide-react";
 import { WhatsAppButton } from "./WhatsAppButton";
-import { ADDRESS_LINE, MAPS_LINK, WHATSAPP_DISPLAY } from "@/lib/site";
+import {
+  ADDRESS_LINE,
+  MAPS_EMBED_ENABLED,
+  MAPS_EMBED_URL,
+  MAPS_LINK,
+  WHATSAPP_DISPLAY,
+} from "@/lib/site";
 
 export function ContactSection() {
   return (
@@ -80,10 +86,22 @@ export function ContactSection() {
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </a>
 
-            <p className="mt-6 rounded-lg bg-creme px-4 py-3 text-xs leading-relaxed text-marrom/70">
-              O mapa interativo será incorporado ao site após a validação do
-              ponto exato de localização do consultório.
-            </p>
+            {MAPS_EMBED_ENABLED ? (
+              <iframe
+                src={MAPS_EMBED_URL}
+                title={`Mapa com a localização do consultório — ${ADDRESS_LINE}`}
+                className="mt-6 h-72 w-full rounded-xl border border-marrom/10"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            ) : (
+              <p className="mt-6 rounded-lg bg-creme px-4 py-3 text-xs leading-relaxed text-marrom/70">
+                O mapa interativo será incorporado ao site após a validação do
+                ponto exato de localização do consultório.
+              </p>
+            )}
           </div>
         </div>
       </div>

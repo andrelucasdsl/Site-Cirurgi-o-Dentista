@@ -18,7 +18,7 @@ export const SITE_TITLE =
   "André Lucas Scalzer e Laizza Scalzer | Odontologia em Teixeira de Freitas – BA";
 
 export const SITE_DESCRIPTION =
-  "Consultório odontológico de André Lucas Scalzer e Laizza Scalzer em Teixeira de Freitas – BA. Clareamento, limpeza e prevenção, restaurações, endodontia e cirurgia oral. Agende pelo WhatsApp.";
+  "Consultório odontológico de André Lucas Scalzer e Laizza Scalzer em Teixeira de Freitas – BA. Clareamento, limpeza e prevenção, restaurações, endodontia, cirurgia oral e lentes em resina. Agende pelo WhatsApp.";
 
 export const SITE_KEYWORDS = [
   "cirurgião-dentista em Teixeira de Freitas",
@@ -56,9 +56,22 @@ export function whatsappLink(message: string = WHATSAPP_DEFAULT_MESSAGE) {
 export const ADDRESS_LINE =
   "R. do Haiti, 127 – Belas Vista, Teixeira de Freitas – BA, 45990-301";
 
-export const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  ADDRESS_LINE,
-)}`;
+/** Coordenadas exatas do consultório (pin validado no Google Maps). */
+export const MAPS_COORDS = "-17.5402956,-39.7387319";
+
+/** Link oficial do local no Google Maps (Ateliê Oral), sem parâmetros de
+ *  rastreamento. */
+export const MAPS_LINK =
+  "https://www.google.com/maps/place/Ateli%C3%AA+Oral+(Dentista+em+Teixeira+de+Freitas)/@-17.5402956,-39.7413068,17z/data=!4m16!1m9!3m8!1s0x7354522b8f34401:0x7b25244d602939f2!2sAteli%C3%AA+Oral+(Dentista+em+Teixeira+de+Freitas)!8m2!3d-17.5402956!4d-39.7387319!9m1!1b1!16s%2Fg%2F11h6l03jc3!3m5!1s0x7354522b8f34401:0x7b25244d602939f2!8m2!3d-17.5402956!4d-39.7387319!16s%2Fg%2F11h6l03jc3";
+
+/** Mapa interativo embutido (iframe do Google Maps) — ATIVADO após a
+ *  validação do ponto exato (pin conferido com o endereço do consultório). */
+export const MAPS_EMBED_ENABLED = true;
+
+/** URL do iframe com o pin fixado nas coordenadas exatas. */
+export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  MAPS_COORDS,
+)}&hl=pt-BR&z=17&output=embed`;
 
 // ---------------------------------------------------------------------------
 // Navegação
@@ -73,7 +86,8 @@ export const NAV_LINKS = [
 ] as const;
 
 // ---------------------------------------------------------------------------
-// Tratamentos (somente os cinco serviços confirmados na PRD)
+// Tratamentos (serviços confirmados na PRD + procedimentos informados pelos
+// profissionais)
 // ---------------------------------------------------------------------------
 
 export type Treatment = {
@@ -113,11 +127,35 @@ export const TREATMENTS: Treatment[] = [
     description:
       "Procedimentos cirúrgicos na região bucal, sempre após avaliação individual do caso.",
   },
+  {
+    id: "lentes-resina",
+    name: "Lentes em resina",
+    description:
+      "Procedimento estético que utiliza resina com carga em cerâmica para melhorar a forma, o tamanho e a aparência dos dentes, proporcionando mais harmonia ao sorriso após avaliação individualizada.",
+  },
 ];
 
 export function treatmentWhatsappMessage(treatment: Treatment) {
   return `Olá! Vim pelo site e gostaria de informações sobre ${treatment.name.toLowerCase()}. Poderiam me passar horários disponíveis?`;
 }
+
+// ---------------------------------------------------------------------------
+// Casos com fotos de antes e depois (seção "Nossos resultados")
+// As fotos ficam em public/resultados/<slug>-antes.ext e <slug>-depois.ext
+// O título de cada caso é exibido somente quando preenchido aqui.
+// ---------------------------------------------------------------------------
+
+export type ResultCase = {
+  slug: string;
+  /** Ex.: "Clareamento dental". Deixe vazio para não exibir título. */
+  title?: string;
+};
+
+export const RESULT_CASES: ResultCase[] = [
+  { slug: "caso1" },
+  { slug: "caso2" },
+  { slug: "caso3" },
+];
 
 // ---------------------------------------------------------------------------
 // Diferenciais (apenas pontos confirmados — sem promessas de resultado)
@@ -185,7 +223,7 @@ export const FAQS = [
   {
     question: "Quais tratamentos são realizados?",
     answer:
-      "Atendemos clareamento dental, limpeza e prevenção, restaurações, endodontia e cirurgia oral. Em caso de dúvidas, fale conosco pelo WhatsApp.",
+      "Atendemos clareamento dental, limpeza e prevenção, restaurações, endodontia, cirurgia oral e lentes em resina. Em caso de dúvidas, fale conosco pelo WhatsApp.",
   },
   {
     question: "Preciso marcar horário com antecedência?",

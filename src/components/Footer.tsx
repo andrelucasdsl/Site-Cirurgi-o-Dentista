@@ -86,9 +86,9 @@ export async function Footer() {
         </div>
 
         <p className="mt-10 rounded-lg bg-white/5 px-4 py-3 text-xs leading-relaxed text-creme/70">
-          Identificação profissional: os registros (CRO) de André Lucas Scalzer
-          e Laizza Scalzer serão exibidos nesta área após a confirmação, antes
-          da publicação do site.
+          Identificação profissional: André Lucas Scalzer — CRO-BA 30069 ·
+          Laizza Scalzer — CRO-BA 30100. Registros profissionais informados
+          pelos próprios profissionais.
         </p>
 
         <div className="mt-6 border-t border-creme/10 pt-6 text-xs text-creme/60">

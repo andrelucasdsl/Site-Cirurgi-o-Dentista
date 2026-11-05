@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/HeroSection";
 import { ProfessionalsSection } from "@/components/ProfessionalsSection";
 import { TreatmentsGrid } from "@/components/TreatmentsGrid";
-import { DifferentialsSection } from "@/components/DifferentialsSection";
+import { ResultsSection } from "@/components/ResultsSection";
 import { AppointmentSteps } from "@/components/AppointmentSteps";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ContactSection } from "@/components/ContactSection";
@@ -47,7 +47,7 @@ export default function Home() {
       <HeroSection />
       <ProfessionalsSection />
       <TreatmentsGrid />
-      <DifferentialsSection />
+      <ResultsSection />
       <AppointmentSteps />
       <FAQAccordion />
       <ContactSection />
