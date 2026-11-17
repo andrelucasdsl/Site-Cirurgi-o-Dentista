@@ -14,7 +14,8 @@ import {
 
 export default function Home() {
   // Dados estruturados para mecanismos de busca (SEO local).
-  // openingHours fica de fora de propósito: os horários ainda são pendentes.
+  // openingHours fica de fora de propósito: o atendimento é apenas com
+  // horário marcado pelo WhatsApp, sem horários fixos publicados.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Dentist",

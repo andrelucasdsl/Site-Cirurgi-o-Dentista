@@ -1,26 +1,38 @@
 # ANDAMENTO — continuar de onde paramos
 
-> Última atualização: 05/11/2026 (mapa interativo ativado)
-> Dev server: http://localhost:3000 (ver se está rodando; se não, rodar
-> `npm run dev` ou clicar em PREVISUALIZAR-SITE.bat)
-
-### Alterações de 05/11
-- [x] **Novo tratamento**: "Lentes em resina" (card + ícone `Gem` + meta
-      description + FAQ atualizados em `src/lib/site.ts` e `TreatmentCard.tsx`)
-- [x] **Frase da seção "Quem atende você"** substituída ("trabalham juntos...
-      atendimento humanizado... saúde e bem-estar") em `ProfessionalsSection.tsx`
-- [x] **Mapa interativo ATIVADO** — pin validado em
-      `src/lib/site.ts` (`MAPS_COORDS = "-17.5402956,-39.7387319"`,
-      `MAPS_EMBED_ENABLED = true`, `MAPS_LINK` = local oficial no Google
-      Maps); iframe no `ContactSection.tsx`; aviso removido; política de
-      privacidade item 4 atualizada
+> Última atualização: 12/11/2026 (alterações locais — AINDA NÃO publicadas)
+>
+> ## 🟡 SITUAÇÃO ATUAL
+> - **GitHub**: último commit `0dda299` (05/11) — as alterações de 12/11
+>   estão **só locais**, pedir build + push quando o cliente aprovar
+> - **Alterações de 12/11 (locais)**:
+>   - Galeria de resultados refeita: 4 casos com legendas
+>     (`RESULT_CASES`: Limpeza + Clareamento, Clareamento, Restaurações,
+>     Tratamento de Canal) — grid de 4 colunas no desktop
+>   - Fotos: `profilaxia-clareamento.jpg`, `caso1.jpg` (mantida),
+>     `restauracoes.jpg` (nova), `tratamento-canal.jpg` (movida da seção
+>     de tratamentos para resultados) · `caso2.jpg`/`caso3.jpg` apagados
+>   - Marca confirmada como **"A&L Odontologia"** (alt do BrandMark +
+>     comentários) · `DIFFERENTIALS` (código morto) removido
+> - **Para retomar**: abrir http://localhost:3000 (se não subir, rodar
+>   `npm run dev` ou clicar em `PREVISUALIZAR-SITE.bat`)
+> - **Para publicar de novo**: pedir build + push (aparece um código de
+>   8 dígitos em github.com/login/device — vale 15 min, fazer na hora;
+>   app oficial GitHub CLI `178c6fc778ccc68e1d6a`, escopo `repo`)
+>
+> ### Histórico do que foi publicado (commit 0dda299, 05/11)
+> - Fotos: capa (hero), André, Laizza · CRO-BA 30069/30100
+> - Seção "Seu sorriso, nossa prioridade" + galeria de casos
+> - Marca (cabeçalho) + favicon
+> - Mapa interativo com pin validado + política de privacidade
+> - Tratamento "Lentes em resina" · texto novo "Quem atende você"
 
 ## ✅ O que já foi feito (E NÃO está no GitHub ainda)
 
-O repositório remoto está no commit `d02ea1e` ("first commit"). **Tudo abaixo
-foi feito depois e precisa de build + commit + push** (é só pedir):
+As alterações abaixo **já foram publicadas** no commit `0dda299` (05/11/2026)
+— este bloco fica como histórico do que mudou desde o "first commit":
 
-### Alterações no código
+### Alterações no código (PUBLICADAS)
 - [x] **Fotos dos profissionais** aplicadas (andre.jpg 853×1280, laizza.jpg
       1122×1402) em `public/fotos/`, formato 4:5 corte pelo topo
 - [x] **CROs**: André — CRO-BA 30069 · Laizza — CRO-BA 30100 (cards +
@@ -43,43 +55,36 @@ foi feito depois e precisa de build + commit + push** (é só pedir):
       `BrandMark.tsx` agora usa `next/image` em vez do SVG genérico;
       favicon trocado: `src/app/icon.svg` deletado → `src/app/icon.png`
       (512×512, 45 KB)
+- [x] **Capa (hero)**: `public/fotos/hero.jpg` (1086×1448, 181 KB) no lugar
+      do espaço reservado (`HeroSection.tsx`)
+- [x] **Mapa interativo** e **Lentes em resina** (ver histórico acima)
 
-### Git local (pendente de push)
-```
- M README.md                    (pendências atualizadas)
- D src/app/icon.svg             (favicon antigo)
- M src/app/page.tsx             (ResultsSection no lugar de Differentials)
- M src/components/BrandMark.tsx (marca nova via next/image)
- D src/components/DifferentialsSection.tsx
- M src/components/Footer.tsx    (CRO-BA)
- M src/components/ProfessionalsSection.tsx (fotos + CROs)
- M src/lib/site.ts              (RESULT_CASES)
-?? public/                      (fotos/ + resultados/ + marca-ael.png)
-?? src/app/icon.png
-?? src/components/ResultsSection.tsx
-```
+## 📋 Pendências (atualizado em 12/11/2026 com as respostas do cliente)
 
-## 📋 Pendências conhecidas (PRD)
-
-1. **Autorização dos pacientes** para as fotos de antes/depois — frase
-   "publicadas com autorização" está na seção, mas **ainda não confirmada**
-2. **Títulos dos casos** — `RESULT_CASES` em `src/lib/site.ts` está só com
-   slugs (caso1/2/3); se quiser nome do procedimento em cada, é só informar
-3. **Diferenciais removidos** — o cliente não respondeu se quer religá-los
-   em outro lugar (a PRD prevê seção de diferenciais)
-4. **Nome da marca** (pendente desde o início — por isso nomes dos
-   profissionais como identificação)
-5. **Horários de atendimento** (dados reais)
-6. **Foto do hero** — cliente disse que ainda não vai enviar
-7. **Domínio** — atualizar `SITE_URL` em `src/lib/site.ts` (hoje
-   `https://example.com`)
-8. ~~**Validação do pin do mapa**~~ — ✅ **CONCLUÍDO**: pin validado
-   (coordenadas `-17.5402956,-39.7387319`, endereço R. do Haiti, 127
-   confere) e **mapa interativo ATIVADO** no site (`MAPS_EMBED_ENABLED =
-   true`), link oficial do local configurado e política de privacidade
-   (item 4) atualizada
-9. **Nome da marca** — o Google Maps mostra o local como **"Ateliê Oral"**;
-   confirmar com os profissionais se esse é o nome a usar no site
+1. ~~**Autorização dos pacientes**~~ — ✅ **CONCLUÍDO**: cliente confirmou
+   em 12/11/2026 que **todas as fotos de casos são autorizadas** pelos
+   pacientes; a frase "publicadas com autorização" está correta
+2. ~~**Títulos dos casos**~~ — ✅ **CONCLUÍDO**: legendas aplicadas
+   (Limpeza + Clareamento, Clareamento, Restaurações, Tratamento de Canal)
+3. ~~**Diferenciais removidos**~~ — ✅ **CONCLUÍDO**: cliente confirmou em
+   12/11/2026 que **fica sem a seção de diferenciais**; constante morta
+   `DIFFERENTIALS` removida do código
+4. ~~**Nome da marca**~~ — ✅ **CONCLUÍDO**: marca é **"A&L Odontologia"**.
+   "Ateliê Oral" é apenas o nome do local de atendimento (como aparece no
+   Google Maps) — não usar como marca do site
+5. ~~**Horários de atendimento**~~ — ✅ **RESOLVIDO**: cliente confirmou
+   que **atendimento só com horário marcado pelo WhatsApp** — o site já
+   diz isso (contato, FAQ e rodapé), sem horários fixos publicados;
+   `openingHours` fica de fora do JSON-LD de propósito
+6. ~~**Foto do hero**~~ — ✅ **CONCLUÍDA** (commit `0dda299`)
+7. **Domínio** — **ÚLTIMA pendência da PRD** (orientação do cliente em
+   12/11: será a última coisa). Atualizar `SITE_URL` em `src/lib/site.ts`
+   (hoje `https://example.com`) — afeta canonical, Open Graph e sitemap
+8. ~~**Validação do pin do mapa**~~ — ✅ **CONCLUÍDO** (mapa interativo
+   ativo + política de privacidade atualizada)
+9. **Marca d'água da foto "Limpeza + Clareamento"** — está com "Mel
+   Odontologia"; o cliente vai **reenviar a foto corrigida** (12/11) —
+   quando chegar, trocar `public/resultados/profilaxia-clareamento.jpg`
 
 ## 🔧 Comandos úteis
 

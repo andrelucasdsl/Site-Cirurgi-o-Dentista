@@ -2,16 +2,16 @@ import Image from "next/image";
 
 /**
  * Identificação principal do site.
- * Usa a marca gráfica enviada pelos profissionais (AeL Odontologia).
- * A marca comercial final está pendente de confirmação; por isso, os nomes
- * dos profissionais são usados como identificação provisória.
+ * Usa a marca gráfica enviada pelos profissionais: "A&L Odontologia"
+ * (nome confirmado pelos profissionais em 12/11/2026; "Ateliê Oral" é o
+ * nome do local de atendimento, não da marca).
  */
 export function BrandMark() {
   return (
     <span className="flex items-center gap-3">
       <Image
         src="/marca-ael.png"
-        alt="AeL Odontologia"
+        alt="A&L Odontologia"
         width={320}
         height={204}
         className="h-10 w-auto shrink-0"

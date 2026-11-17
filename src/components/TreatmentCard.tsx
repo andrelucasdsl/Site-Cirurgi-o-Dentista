@@ -1,6 +1,21 @@
+import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import { Activity, ArrowUpRight, Gem, Layers, ShieldCheck, Sparkles, Syringe } from "lucide-react";
+import fs from "node:fs";
+import path from "node:path";
 import { treatmentWhatsappMessage, whatsappLink, type Treatment } from "@/lib/site";
+
+const PHOTO_DIR = path.join(process.cwd(), "public", "tratamentos");
+const PHOTO_EXTENSIONS = [".webp", ".jpg", ".jpeg", ".png"];
+
+/** Procura a foto do tratamento em public/tratamentos/<id>.<ext>. */
+function findTreatmentPhoto(id: string): string | null {
+  for (const ext of PHOTO_EXTENSIONS) {
+    const file = path.join(PHOTO_DIR, `${id}${ext}`);
+    if (fs.existsSync(file)) return `/tratamentos/${id}${ext}`;
+  }
+  return null;
+}
 
 const TREATMENT_ICONS: Record<string, LucideIcon> = {
   clareamento: Sparkles,
@@ -13,6 +28,7 @@ const TREATMENT_ICONS: Record<string, LucideIcon> = {
 
 export function TreatmentCard({ treatment }: { treatment: Treatment }) {
   const Icon = TREATMENT_ICONS[treatment.id] ?? Sparkles;
+  const photo = findTreatmentPhoto(treatment.id);
 
   return (
     <article className="group flex h-full flex-col rounded-2xl border border-marrom/10 bg-creme p-6 transition-all hover:-translate-y-1 hover:border-laranja/60 hover:shadow-lg">
@@ -25,6 +41,28 @@ export function TreatmentCard({ treatment }: { treatment: Treatment }) {
       <p className="mt-2 flex-1 text-sm leading-relaxed text-marrom/75">
         {treatment.description}
       </p>
+
+      {photo && (
+        <figure className="mt-4">
+          <Image
+            src={photo}
+            alt={
+              treatment.photoCaption
+                ? `${treatment.photoCaption} — ${treatment.name}`
+                : `Foto ilustrativa do tratamento ${treatment.name}`
+            }
+            width={960}
+            height={1280}
+            sizes="(max-width: 640px) 90vw, 30vw"
+            className="aspect-[4/3] w-full rounded-lg object-cover"
+          />
+          {treatment.photoCaption && (
+            <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-widest text-marrom/70">
+              {treatment.photoCaption}
+            </figcaption>
+          )}
+        </figure>
+      )}
 
       <a
         href={whatsappLink(treatmentWhatsappMessage(treatment))}

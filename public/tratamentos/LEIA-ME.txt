@@ -1,0 +1,31 @@
+FOTOS DOS TRATAMENTOS
+=====================
+
+Coloque os arquivos nesta pasta (public/tratamentos) com o MESMO NOME do
+id do tratamento (lista em src/lib/site.ts, campo TREATMENTS):
+
+  clareamento.jpg
+  limpeza.jpg
+  restauracoes.jpg
+  endodontia.jpg
+  cirurgia-oral.jpg
+  lentes-resina.jpg
+
+O site detecta o arquivo automaticamente e mostra a foto dentro do card
+do tratamento (abaixo da descricao), com a legenda configurada em
+"photoCaption". Se o arquivo nao existir, o card fica so com texto.
+
+NOTA: a foto do tratamento de canal hoje esta na secao de resultados
+(public/resultados/tratamento-canal.jpg, legenda "Tratamento de Canal"),
+nao nesta pasta.
+
+Aceita .jpg, .jpeg, .png ou .webp.
+Tamanho ideal: 4:3 (paisagem) - minimo 800 px de largura, ate 300 KB.
+
+Para trocar a legenda de algum tratamento, avise (campo photoCaption em
+src/lib/site.ts).
+
+IMPORTANTE (PRD e normas profissionais)
+---------------------------------------
+So publique imagens de pacientes com AUTORIZACAO EXPRESSA. Imagens de
+radiografia devem estar anonimizadas (sem nome, data ou dados do paciente).

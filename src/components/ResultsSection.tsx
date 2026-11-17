@@ -94,14 +94,14 @@ export function ResultsSection() {
           </h2>
         </div>
 
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {RESULT_CASES.map((caso) => {
             const combined = findCombinedPhoto(caso.slug);
             const antes = findSplitPhoto(caso.slug, "antes");
             const depois = findSplitPhoto(caso.slug, "depois");
             const alt = caso.title
-              ? `${caso.title} — antes e depois do tratamento`
-              : "Caso real atendido no consultório — antes e depois do tratamento";
+              ? `${caso.title} — caso real atendido no consultório`
+              : "Caso real atendido no consultório";
 
             return (
               <li

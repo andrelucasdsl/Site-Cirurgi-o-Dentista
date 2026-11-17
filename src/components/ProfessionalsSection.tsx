@@ -22,21 +22,20 @@ const PROFESSIONALS = [
     name: "André Lucas Scalzer",
     role: "Cirurgião-dentista",
     cro: "CRO-BA 30069",
-    bio: "Atendimento odontológico com avaliação individual e orientação clara em cada etapa do tratamento.",
+    bio: "Profissional com experiência clínica odontológica em restaurações, tratamento de canal, cirurgia oral e lentes em resina com carga em cerâmica. Seu trabalho é voltado à recuperação da saúde bucal, funcionalidade e bem-estar dos pacientes.",
   },
   {
     slug: "laizza",
     name: "Laizza Scalzer",
     role: "Cirurgião-dentista",
     cro: "CRO-BA 30100",
-    bio: "Atendimento odontológico com avaliação individual e orientação clara em cada etapa do tratamento.",
+    bio: "Profissional com experiência clínica odontológica em dentística restauradora (restaurações), clareamento dental, profilaxia e tartarectomia (limpeza bucal). Seu trabalho é voltado à estética, harmonia e valorização do sorriso, buscando resultados naturais e a satisfação dos pacientes.",
   },
 ];
 
 /**
- * Apresentação dos profissionais.
- * CRO, formação e especializações permanecem pendentes (PRD) e não foram
- * inventados — serão exibidos aqui assim que forem confirmados.
+ * Apresentação dos profissionais (fotos reais, CROs e textos confirmados
+ * pelos profissionais).
  */
 export function ProfessionalsSection() {
   return (
@@ -102,10 +101,6 @@ export function ProfessionalsSection() {
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-marrom/75">
                   {professional.bio}
-                </p>
-                <p className="mt-4 rounded-lg bg-creme px-4 py-3 text-xs leading-relaxed text-marrom/70">
-                  Formação e especializações serão exibidos nesta área após a
-                  confirmação dos profissionais.
                 </p>
               </li>
             );

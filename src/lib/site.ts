@@ -1,17 +1,19 @@
 // ---------------------------------------------------------------------------
 // Configurações centrais do site.
-// IMPORTANTE: itens pendentes da PRD (domínio, marca, CRO, horários, fotos)
-// estão comentados abaixo. Nada foi inventado — revise antes de publicar.
+// Pendência restante da PRD: apenas o DOMÍNIO (SITE_URL abaixo).
+// Marca confirmada: "A&L Odontologia" · horários: somente via WhatsApp.
+// Nada foi inventado — revise antes de publicar.
 // ---------------------------------------------------------------------------
 
 /**
- * Domínio definitivo ainda não definido (pendência da PRD).
+ * Domínio definitivo ainda não definido (última pendência da PRD — ficará
+ * por último, conforme orientação dos profissionais em 12/11/2026).
  * Substitua pelo domínio real antes de publicar. Este valor é usado no
  * canonical, Open Graph e sitemap.
  */
 export const SITE_URL = "https://example.com";
 
-/** Nome exibido como identificação principal (marca comercial pendente). */
+/** Nome exibido como identificação principal (nomes dos profissionais). */
 export const SITE_NAME = "André Lucas Scalzer e Laizza Scalzer";
 
 export const SITE_TITLE =
@@ -59,7 +61,8 @@ export const ADDRESS_LINE =
 /** Coordenadas exatas do consultório (pin validado no Google Maps). */
 export const MAPS_COORDS = "-17.5402956,-39.7387319";
 
-/** Link oficial do local no Google Maps (Ateliê Oral), sem parâmetros de
+/** Link oficial do local no Google Maps (espaço "Ateliê Oral", onde o
+ * atendimento acontece — a marca do site é A&L Odontologia), sem parâmetros de
  *  rastreamento. */
 export const MAPS_LINK =
   "https://www.google.com/maps/place/Ateli%C3%AA+Oral+(Dentista+em+Teixeira+de+Freitas)/@-17.5402956,-39.7413068,17z/data=!4m16!1m9!3m8!1s0x7354522b8f34401:0x7b25244d602939f2!2sAteli%C3%AA+Oral+(Dentista+em+Teixeira+de+Freitas)!8m2!3d-17.5402956!4d-39.7387319!9m1!1b1!16s%2Fg%2F11h6l03jc3!3m5!1s0x7354522b8f34401:0x7b25244d602939f2!8m2!3d-17.5402956!4d-39.7387319!16s%2Fg%2F11h6l03jc3";
@@ -94,6 +97,8 @@ export type Treatment = {
   id: string;
   name: string;
   description: string;
+  /** Legenda exibida abaixo da foto do tratamento (quando houver foto). */
+  photoCaption?: string;
 };
 
 export const TREATMENTS: Treatment[] = [
@@ -152,37 +157,16 @@ export type ResultCase = {
 };
 
 export const RESULT_CASES: ResultCase[] = [
-  { slug: "caso1" },
-  { slug: "caso2" },
-  { slug: "caso3" },
+  { slug: "profilaxia-clareamento", title: "Limpeza + Clareamento" },
+  { slug: "caso1", title: "Clareamento" },
+  { slug: "restauracoes", title: "Restaurações" },
+  { slug: "tratamento-canal", title: "Tratamento de Canal" },
 ];
 
 // ---------------------------------------------------------------------------
-// Diferenciais (apenas pontos confirmados — sem promessas de resultado)
+// Diferenciais — removidos do site a pedido dos profissionais (12/11/2026):
+// a seção de resultados ("Seu sorriso, nossa prioridade") os substitui.
 // ---------------------------------------------------------------------------
-
-export const DIFFERENTIALS = [
-  {
-    title: "Atendimento em Teixeira de Freitas",
-    description:
-      "Consultório na R. do Haiti, 127 – Belas Vista, com localização de fácil acesso.",
-  },
-  {
-    title: "Contato direto pelo WhatsApp",
-    description:
-      "Agendamento e informações por mensagem, sem burocracia e sem formulários.",
-  },
-  {
-    title: "Avaliação individual",
-    description:
-      "Cada caso é avaliado antes da definição do tratamento mais adequado.",
-  },
-  {
-    title: "Informação clara",
-    description:
-      "Explicamos cada procedimento para que você decida com tranquilidade.",
-  },
-] as const;
 
 // ---------------------------------------------------------------------------
 // Etapas para solicitar uma avaliação

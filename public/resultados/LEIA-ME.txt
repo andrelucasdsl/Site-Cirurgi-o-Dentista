@@ -1,21 +1,22 @@
 FOTOS DE ANTES E DEPOIS (secao "NOSSOS RESULTADOS")
 ===================================================
 
-Coloque os arquivos nesta pasta (public/resultados) com EXATAMENTE estes
-nomes, um para cada caso:
+Coloque os arquivos nesta pasta (public/resultados). Os nomes usados
+atualmente no site (lista em src/lib/site.ts, campo RESULT_CASES) sao:
 
+  profilaxia-clareamento.jpg
   caso1.jpg
-  caso2.jpg
-  caso3.jpg
+  restauracoes.jpg
+  tratamento-canal.jpg
 
 FORMATO PREFERIDO: uma unica foto ja montada com o "Antes" e o "Depois"
-na mesma imagem (como as 3 enviadas pelo WhatsApp). Nesse caso nao ha
-separacao no site - a imagem aparece inteira.
+na mesma imagem (ou foto unica do resultado). Nesse caso nao ha separacao
+no site - a imagem aparece inteira.
 
 FORMATO ALTERNATIVO (caso algum dia faca fotos separadas): o site tambem
-aceita o par de arquivos casoN-antes.jpg + casoN-depois.jpg - nesse caso
+aceita o par de arquivos <slug>-antes.jpg + <slug>-depois.jpg - nesse caso
 ele mostra as duas lado a lado com selos "Antes" e "Depois". Se existir a
-foto unica casoN.jpg, ela tem prioridade.
+foto unica <slug>.jpg, ela tem prioridade.
 
 Aceita tambem .webp, .png ou .jpeg.
 
