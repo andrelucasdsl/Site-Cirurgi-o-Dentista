@@ -1,31 +1,29 @@
 # ANDAMENTO — continuar de onde paramos
 
-> Última atualização: 12/11/2026 (alterações locais — AINDA NÃO publicadas)
+> Última atualização: 17/11/2026 (APÓS publicação no GitHub)
 >
-> ## 🟡 SITUAÇÃO ATUAL
-> - **GitHub**: último commit `0dda299` (05/11) — as alterações de 12/11
->   estão **só locais**, pedir build + push quando o cliente aprovar
-> - **Alterações de 12/11 (locais)**:
->   - Galeria de resultados refeita: 4 casos com legendas
->     (`RESULT_CASES`: Limpeza + Clareamento, Clareamento, Restaurações,
->     Tratamento de Canal) — grid de 4 colunas no desktop
->   - Fotos: `profilaxia-clareamento.jpg`, `caso1.jpg` (mantida),
->     `restauracoes.jpg` (nova), `tratamento-canal.jpg` (movida da seção
->     de tratamentos para resultados) · `caso2.jpg`/`caso3.jpg` apagados
->   - Marca confirmada como **"A&L Odontologia"** (alt do BrandMark +
->     comentários) · `DIFFERENTIALS` (código morto) removido
+> ## 🟢 SITUAÇÃO ATUAL
+> - **GitHub em dia**: commit `cf59580` ("Atualiza galeria de resultados,
+>   textos dos profissionais e marca") publicado e **confirmado no remoto**
+>   (53 arquivos) — inclui tudo de 12/11 e 17/11
 > - **Para retomar**: abrir http://localhost:3000 (se não subir, rodar
 >   `npm run dev` ou clicar em `PREVISUALIZAR-SITE.bat`)
 > - **Para publicar de novo**: pedir build + push (aparece um código de
 >   8 dígitos em github.com/login/device — vale 15 min, fazer na hora;
 >   app oficial GitHub CLI `178c6fc778ccc68e1d6a`, escopo `repo`)
+> - ⚠️ **Aviso Next.js**: a versão 16.4.3 tem vulnerabilidade conhecida —
+>   build/dev às vezes param no aviso de upgrade; é só **rodar o comando
+>   de novo** que passa. Upgrade de segurança ainda NÃO foi aplicado
+>   (cliente não decidiu se roda em worktree)
 >
-> ### Histórico do que foi publicado (commit 0dda299, 05/11)
-> - Fotos: capa (hero), André, Laizza · CRO-BA 30069/30100
-> - Seção "Seu sorriso, nossa prioridade" + galeria de casos
-> - Marca (cabeçalho) + favicon
-> - Mapa interativo com pin validado + política de privacidade
-> - Tratamento "Lentes em resina" · texto novo "Quem atende você"
+> ### Histórico publicado
+> - **`cf59580` (17/11)**: galeria com 4 casos + legendas (Limpeza +
+>   Clareamento com marca d'água corrigida, Clareamento, Restaurações,
+>   Tratamento de Canal); bios do André e da Laizza; caixa de
+>   formação removida; marca "A&L Odontologia"; `DIFFERENTIALS` removido
+> - **`0dda299` (05/11)**: fotos (hero, André, Laizza), CROs, seção de
+>   resultados, marca + favicon, mapa interativo, lentes em resina,
+>   texto "Quem atende você"
 
 ## ✅ O que já foi feito (E NÃO está no GitHub ainda)
 
@@ -82,9 +80,9 @@ As alterações abaixo **já foram publicadas** no commit `0dda299` (05/11/2026)
    (hoje `https://example.com`) — afeta canonical, Open Graph e sitemap
 8. ~~**Validação do pin do mapa**~~ — ✅ **CONCLUÍDO** (mapa interativo
    ativo + política de privacidade atualizada)
-9. **Marca d'água da foto "Limpeza + Clareamento"** — está com "Mel
-   Odontologia"; o cliente vai **reenviar a foto corrigida** (12/11) —
-   quando chegar, trocar `public/resultados/profilaxia-clareamento.jpg`
+9. ~~**Marca d'água da foto "Limpeza + Clareamento"**~~ — ✅ **CONCLUÍDO**:
+   cliente reenviou a foto com "A&L Odontologia" e foi publicada no
+   commit `cf59580`
 
 ## 🔧 Comandos úteis
 

@@ -53,7 +53,7 @@ export function ProfessionalsSection() {
             id="sobre-titulo"
             className="mt-3 text-3xl font-bold sm:text-4xl"
           >
-            Cuidado próximo, feito por duas mãos.
+            Dois profissionais, um propósito: cuidar do seu sorriso.
           </h2>
           <p className="mt-4 text-marrom/75">
             André Lucas Scalzer e Laizza Scalzer trabalham juntos em Teixeira
